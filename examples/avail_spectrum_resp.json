@@ -1,0 +1,52 @@
+{
+"jsonrpc": "2.0",
+"result": {
+    "type": "AVAIL_SPECTRUM_RESP",
+    "version": "1.0",
+    "timestamp": "2024-10-25T09:07:16Z",
+    "deviceDesc": {
+        "serialNumber": "4fbf-bae3-c8c5706745e3",
+        "fccId": "94d8610a-9eea",
+        "rulesetIds": [
+            [
+                "FccTvBandWhiteSpace-2010"
+            ]
+        ]
+    },
+    "spectrumSpecs": [
+        {
+            "rulesetInfo": {
+                "authority": "ANATEL-BR",
+                "rulesetId": "FccTvBandWhiteSpace-2010"
+            },
+            "needsSpectrumReport": false,
+            "spectrumSchedules": [
+                {
+                    "eventTime": {
+                        "startTime": "2024-10-25T09:07:16Z",
+                        "stopTime": "2024-10-26T09:07:16Z"
+                    },
+                    "spectra": [
+                        {
+                            "resolutionBwHz": 6000000,
+                            "profiles": [
+                                [
+                                    {
+                                        "hz": 54000000,
+                                        "dbm": 14.375
+                                    },
+                                    {
+                                        "hz": 452000000,
+                                        "dbm": 25.214844
+                                    }
+                                ]
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+},
+"id": "2"
+}

@@ -1,0 +1,40 @@
+{
+   "jsonrpc":"2.0",
+   "method":"spectrum.paws.getSpectrum",
+   "params":{
+      "type":"AVAIL_SPECTRUM_REQ",
+      "version":"1.0",
+      "deviceDesc":{
+         "serialNumber":"4fbf-bae3-c8c5706745e3",
+         "fccId":"94d8610a-9eea",
+         "rulesetIds":["FccTvBandWhiteSpace-2010"]
+      },
+      "location":{
+         "point":{
+            "center":{
+               "latitude":-3.870961,
+               "longitude":-38.664911
+            }
+         }
+      },
+      "antenna":{
+         "height":76,
+         "heightType":"AGL",
+         "antennaDirection": {
+            "zenith": 10.1,
+             "azimuth": 12.1
+         },
+         "antennaRadiationPattern": [11.1, 22.2],
+         "antennaPolarization": "v"
+      },
+      "masterDeviceLocation":{
+         "point":{
+            "center":{
+               "latitude":-3.7933105,
+               "longitude":-38.6020162
+            }
+         }
+      }
+   },
+   "id":"2"
+}

@@ -1,0 +1,11 @@
+{
+  "jsonrpc": "2.0",
+  "error": {
+    "code": -202,
+    "message": "A parameter value is invalid in some way.",
+    "data": {
+      "parameters": ["params.antenna.height"]
+    }
+  },
+  "id": "2026.1a"
+}

@@ -1,19 +1,10 @@
 {
    "jsonrpc":"2.0",
-   "method":"spectrum.paws.getSpectrum",
+   "method":"spectrum.paws.register",
    "params":{
-      "type":"AVAIL_SPECTRUM_REQ",
+      "type":"REGISTRATION_REQ",
       "version":"1.0",
       "deviceDesc":{
-         "serialNumber":"4fbf-bae3-c8c5706745e3",
-         "fccId":"94d8610a-9eea",
-         "manufacturerId":"123-ABCD-4fbf-bae3-c8c5706745e3",
-         "modelId":"xpto-123-123-123",
-         "rulesetIds":[
-            "FccTvBandWhiteSpace-2010"
-         ]
-      },
-      "masterDeviceDesc":{
          "serialNumber":"4fbf-bae3-c8c5706745e3",
          "fccId":"94d8610a-9eea",
          "manufacturerId":"123-ABCD-4fbf-bae3-c8c5706745e3",
@@ -25,8 +16,8 @@
       "location":{
          "point":{
             "center":{
-               "latitude":-3.7653855,
-               "longitude":-38.5261224
+               "latitude":-4.978806,
+               "longitude":-39.056607
             }
          }
       },
@@ -150,101 +141,6 @@
                   "tel:+1-415-555-0101"
                ]
             ]
-         }
-      },
-      "antenna":{
-         "height":70,
-         "heightType":"AGL",
-         "antennaDirection":{
-            "zenith":10.1,
-            "azimuth":12.1
-         },
-         "antennaRadiationPattern":[
-            [
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0,
-               0.0
-            ]
-         ],
-         "antennaPolarization":[
-            "h"
-         ]
-      },
-      "masterDeviceLocation":{
-         "point":{
-            "center":{
-               "latitude":-3.7653855,
-               "longitude":-38.5261224
-            }
          }
       }
    },

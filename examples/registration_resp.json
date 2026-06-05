@@ -1,7 +1,7 @@
 {
    "jsonrpc":"2.0",
    "result":{
-      "type":"INIT_RESP",
+      "type":"REGISTRATION_RESP",
       "version":"1.0",
       "rulesetInfos":[
          {

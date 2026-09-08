@@ -1,60 +1,19 @@
-# TV White Space API — User Manual
+# Documentation Index
 
-The full user manual is available as a PDF: [main.pdf](main.pdf)
+Each subfolder under `docs/` is dedicated to one self-contained set of documentation. This page is the map — use it to find where a given topic lives before searching.
 
----
+| Location | Contents | Format |
+| :--- | :--- | :--- |
+| [`cache/`](cache/paws-availble_req_cache.md) | Cache-Aside architecture proposal for `AVAIL_SPECTRUM_REQ` responses — component design, cache key derivation, storage tiers, expiration policy, and the associated log spec. | Markdown |
+| [`logs/`](logs/logging-system-proposal.md) | Application-wide structured logging proposal — JSONL format, mandatory fields, per-level `config/default.json` activation, request correlation. | Markdown |
+| [`integrations/`](integrations/external-integrations.md) | Survey of external services the API consumes — elevation, PostgreSQL, Solana blockchain, propagation module: endpoints, protocols, request/response shapes, known failure modes. | Markdown |
+| [`modificacoes/`](modificacoes/blockchain-api-interface-map.md) | Pointer to the external spreadsheet mapping how the blockchain interfaces with the API. | Markdown |
+| [`examples/`](examples/) | Sample PAWS request/response JSON payloads and ready-to-run `curl` scripts for each message type (`INIT_REQ`, `AVAIL_SPECTRUM_REQ`, `REGISTRATION_REQ`, etc.). | JSON / shell |
+| [`configuration_manual/`](configuration_manual/main.tex) | Deployment & configuration manual — architecture, methodology, message reference, customizations, deploy steps, admin services. | LaTeX (compiled to PDF via `make`) |
+| [`user_manual/`](user_manual/main.tex) | End-user manual — introduction, usage flow, message reference, error codes. | LaTeX (compiled to PDF via `make`) |
+| [`sphinx/`](sphinx/index.rst) | Generated API reference site — architecture, database, PAWS, admin, customizations, configuration, security. | reStructuredText (Sphinx build) |
+| [`README.pub`](README.pub) | The previous top-level quick-start guide (curl examples index, pointer to the compiled user manual PDF). Kept for reference; superseded as the docs landing page by this file. | Markdown |
 
-## Quick Start — Available Spectrum Request
+## Adding new documentation
 
-The main operation of the API is the `AVAIL_SPECTRUM_REQ`, used by a White Space Device (WSD) to query available TV White Space spectrum for a given location.
-
-### Option 1 — from a JSON file
-
-Pass the request body from a file (replace `PATH/TO_FILE.json` and `URL_HERE`):
-
-```bash
-curl -v -i --header "Content-Type: application/json" --request POST --data @PATH/TO_FILE.json URL_HERE
-```
-
-Full example file: [examples/curl_from_file.sh](examples/curl_from_file.sh)  
-Request body: [examples/avail_spectrum_req.json](examples/avail_spectrum_req.json)
-
-```bash
-curl -v -i \
-  --header "Content-Type: application/json" \
-  --request POST \
-  --data @examples/avail_spectrum_req.json \
-  URL_HERE
-```
-
-### Option 2 — inline JSON
-
-```bash
-curl -X POST URL_HERE \
-  -H "Content-Type: application/json" \
-  -d '{"jsonrpc":"2.0","method":"spectrum.paws.getSpectrum","params":{"type":"AVAIL_SPECTRUM_REQ","version":"1.0","deviceDesc":{"serialNumber":"4fbf-bae3-c8c5706745e3","fccId":"94d8610a-9eea","manufacturerId":"123-ABCD-4fbf-bae3-c8c5706745e3","modelId":"xpto-123-123-123","rulesetIds":["FccTvBandWhiteSpace-2010"]},"masterDeviceDesc":{"serialNumber":"4fbf-bae3-c8c5706745e3","fccId":"94d8610a-9eea","manufacturerId":"123-ABCD-4fbf-bae3-c8c5706745e3","modelId":"xpto-123-123-123","rulesetIds":["FccTvBandWhiteSpace-2010"]},"location":{"point":{"center":{"latitude":-3.7653855,"longitude":-38.5261224}}}},"id":"10"}'
-```
-
-Full script: [examples/curl_avail_spectrum_req.sh](examples/curl_avail_spectrum_req.sh)
-
----
-
-## All curl examples
-
-| Example | Description |
-|---|---|
-| [curl_from_file.sh](examples/curl_from_file.sh) | Generic POST from a local JSON file |
-| [curl_init_req.sh](examples/curl_init_req.sh) | `INIT_REQ` — device initialization |
-| [curl_avail_spectrum_req.sh](examples/curl_avail_spectrum_req.sh) | `AVAIL_SPECTRUM_REQ` — query available spectrum |
-| [curl_registration_req.sh](examples/curl_registration_req.sh) | `REGISTRATION_REQ` — device registration (requires auth token) |
-| [curl_auth_general.sh](examples/curl_auth_general.sh) | Generic authenticated request example |
-
-## JSON payloads
-
-| File | Description |
-|---|---|
-| [avail_spectrum_req.json](examples/avail_spectrum_req.json) | `AVAIL_SPECTRUM_REQ` request body |
-| [avail_spectrum_resp.json](examples/avail_spectrum_resp.json) | `AVAIL_SPECTRUM_RESP` response example |
-| [init_req.json](examples/init_req.json) | `INIT_REQ` request body |
-| [init_resp.json](examples/init_resp.json) | `INIT_REQ` response example |
-| [spectrum_use_notify.json](examples/spectrum_use_notify.json) | `SPECTRUM_USE_NOTIFY` body |
+New documentation goes in its own topic folder under `docs/`, written as plain Markdown — no LaTeX or Sphinx build step required, so updates stay quick to write and review (see `cache/` and `logs/` for the pattern). Add a row to the table above when you create one.

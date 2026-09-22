@@ -6,6 +6,7 @@ Each subfolder under `docs/` is dedicated to one self-contained set of documenta
 | :--- | :--- | :--- |
 | [`cache/`](cache/paws-availble_req_cache.md) | Cache-Aside architecture proposal for `AVAIL_SPECTRUM_REQ` responses — component design, cache key derivation, storage tiers, expiration policy, and the associated log spec. | Markdown |
 | [`logs/`](logs/logging-system-proposal.md) | Application-wide structured logging proposal — JSONL format, mandatory fields, per-level `config/default.json` activation, request correlation. | Markdown |
+| [`antena/`](antena/antenna-parameters.md) | Reference for every `params.antenna` variable in `AVAIL_SPECTRUM_REQ` — type, range, validation order, error codes, configuration bounds, and known gaps between spec and implementation. | Markdown |
 | [`integrations/`](integrations/external-integrations.md) | Survey of external services the API consumes — elevation, PostgreSQL, Solana blockchain, propagation module: endpoints, protocols, request/response shapes, known failure modes. | Markdown |
 | [`modificacoes/`](modificacoes/blockchain-api-interface-map.md) | Pointer to the external spreadsheet mapping how the blockchain interfaces with the API. | Markdown |
 | [`examples/`](examples/) | Sample PAWS request/response JSON payloads and ready-to-run `curl` scripts for each message type (`INIT_REQ`, `AVAIL_SPECTRUM_REQ`, `REGISTRATION_REQ`, etc.). | JSON / shell |
